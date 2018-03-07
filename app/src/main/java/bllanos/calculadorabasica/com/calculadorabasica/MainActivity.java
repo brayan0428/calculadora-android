@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public  void onClick(View view){
                 try{
                     Integer num1 = 0,num2 = 0;
-                    float resultado;
+                    Integer resultado;
                     String operar = operacion.getSelectedItem().toString().toLowerCase();
                     if(numero1.getText().toString().equals("")){
                         showMessage("Debe ingresar el numero 1");
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                             vresultado.setText("" + resultado);
                             break;
                         case "multiplicación":
-                            resultado = (Integer)(num1*num2);
+                            resultado = (num1*num2);
                             vresultado.setText("" + resultado);
                             break;
                         case "división":
@@ -64,11 +64,11 @@ public class MainActivity extends AppCompatActivity {
                                 showMessage("No se puede dividir entre cero");
                                 return;
                             }
-                            resultado = (float)num1/num2;
-                            vresultado.setText("" + resultado);
+                            float resultd = (float) num1/num2;
+                            vresultado.setText("" + resultd);
                             break;
                         case "potenciación":
-                            resultado = (float) Math.pow(num1,num2);
+                            resultado = (int)Math.pow(num1,num2);
                             vresultado.setText("" + resultado);
                             break;
                         default:
@@ -100,5 +100,6 @@ public class MainActivity extends AppCompatActivity {
         numero1.setText("0");
         numero2.setText("0");
         vresultado.setText("0");
+        operacion.setSelection(0,true);
     }
 }

@@ -67,5 +67,6 @@
         android:text="0"
         android:gravity="center"
         android:textSize="50dp"
+        android:fontFamily="monospace"
         ></TextView>
 </LinearLayout>
